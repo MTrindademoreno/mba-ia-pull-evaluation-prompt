@@ -125,9 +125,24 @@ Antes vs Depois:
 
 **B) Seção "Resultados Finais":**
 
-- Link público do seu dashboard do LangSmith mostrando as avaliações
+- [Dashboard do LangSmith — resultados da avaliação](https://smith.langchain.com/o/6937429f-5622-44b7-8861-57f75192f742/projects/p/bd92d79b-8f89-498d-a772-89d5082b42a3?timeModel=%7B%22duration%22%3A%221d%22%7D)
+
 - Screenshots das avaliações com as notas mínimas de 0.8 atingidas
+
+![Avaliações LangSmith](success.png)
+
+![Tracing LangSmith](dashtrace.png)
+
 - Tabela comparativa: prompts ruins (v1) vs prompts otimizados (v2)
+
+| Métrica         | v1 (sem otimização) | v2 (otimizado)  |
+|-----------------|---------------------|-----------------|
+| F1-Score        | 0.54 ❌             | 0.82 ✅         |
+| Clarity         | 0.75 ❌             | 0.96 ✅         |
+| Precision       | 0.82 ❌             | 0.95 ✅         |
+| Helpfulness     | 0.79 ❌             | 0.95 ✅         |
+| Correctness     | 0.68 ❌             | 0.88 ✅         |
+| **Média Geral** | **0.716** ❌        | **0.9143** ✅   |
 
 **C) Seção "Como Executar":**
 
