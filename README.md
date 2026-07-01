@@ -146,9 +146,54 @@ Antes vs Depois:
 
 **C) Seção "Como Executar":**
 
-- Instruções claras e detalhadas de como executar o projeto
-- Pré-requisitos e dependências
-- Comandos para cada fase do projeto
+## Como Executar
+
+### Pré-requisitos
+
+- Python 3.9+
+- Conta no [LangSmith](https://smith.langchain.com)
+- Chave de API OpenAI ou Google Gemini
+
+### Configuração
+
+```bash
+pip install -r requirements.txt
+cp .env.example .env  # configure as variáveis: LANGSMITH_API_KEY, OPENAI_API_KEY, USERNAME_LANGSMITH_HUB
+```
+
+### Fluxo de execução
+
+**Fase 1 — Pull dos prompts ruins**
+
+Baixa os prompts de baixa qualidade do LangSmith Hub para a pasta `prompts/`.
+
+```bash
+python src/pull_prompts.py
+```
+
+**Fase 2 — Refatorar os prompts**
+
+Edite o arquivo `prompts/bug_to_user_story_v2.yml` aplicando as técnicas de Prompt Engineering. Valide localmente antes de publicar:
+
+```bash
+pytest tests/test_prompts.py -v
+```
+
+**Fase 3 — Push dos prompts otimizados**
+
+Publica a versão otimizada no LangSmith Hub. O `evaluate.py` sempre usará a versão mais recente publicada aqui.
+
+```bash
+python src/push_prompts.py
+```
+
+**Fase 4 — Avaliação**
+
+Executa os prompts contra o dataset de 15 exemplos e calcula as métricas (F1-Score, Clarity, Precision, Helpfulness, Correctness). O resultado precisa atingir ≥ 0.8 em todas as métricas.
+
+```bash
+python src/evaluate.py
+```
 
 **3. Evidências no LangSmith:**
 
