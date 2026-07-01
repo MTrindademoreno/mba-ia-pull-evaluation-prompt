@@ -152,10 +152,17 @@ Antes vs Depois:
 
 **3. Evidências no LangSmith:**
 
-- Link público (ou screenshots) do dashboard do LangSmith
-- Devem estar visíveis:
-  - Dataset de avaliação com 15 exemplos
-  - Execuções dos prompts v2 (otimizados) com notas ≥ 0.8
+ - Dataset de avaliação com 15 exemplos
+   ![Dataset LangSmith](dataset.png)
+
   - Tracing detalhado de pelo menos 3 exemplos
+    ![Tracing1 LangSmith](tracing1.png)
+
+    ![Tracing2 LangSmith](tracing2.png)
+
+    ![Tracing3 LangSmith](tracing3.png)
+
+
+
 
 ---
